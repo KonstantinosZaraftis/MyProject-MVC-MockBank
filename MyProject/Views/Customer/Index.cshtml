@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MyProject.Models.Customer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>All My Customers</h2>
+<br />
+@Html.ActionLink("Create New Customer","Create")
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+            <th>@Html.DisplayNameFor(model => model.LastName)</th>
+            <th>@Html.DisplayNameFor(model => model.Address)</th>
+            <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
+            <th>Actions</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var bankacount in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => bankacount.Id)</td>
+                <td>@Html.DisplayFor(model => bankacount.FirstName)</td>
+                <td>@Html.DisplayFor(model => bankacount.LastName)</td>
+                <td>@Html.DisplayFor(model => bankacount.Address)</td>
+                <td>@Html.DisplayFor(model => bankacount.PhoneNumber)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = bankacount.Id })
+                    @Html.ActionLink("Details", "Details", new { id = bankacount.Id })
+                    @Html.ActionLink("Delete", "Details", new { id = bankacount.Id })
+                </td>
+            </tr>
+        }
+
+    </tbody>
+
+
+
+
+</table>
+
+
+
+
+

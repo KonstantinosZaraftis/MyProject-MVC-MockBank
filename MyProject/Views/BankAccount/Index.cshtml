@@ -1,0 +1,36 @@
+﻿@model IEnumerable<MyProject.Models.BankAccount>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>My Portofolio</h2>
+<br />
+@*@Html.ActionLink("Create New BankAccount","Create")*@
+<table class="table">
+<thead>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Id)</th>
+        <th>@Html.DisplayNameFor(model => model.AccountNumber)</th>
+        
+
+    </tr>
+</thead>
+<tbody>
+    @foreach (var bankacount in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(x => bankacount.Id)</td>
+            <td>@Html.DisplayFor(x => bankacount.AccountNumber)</td>
+            
+            
+        </tr>
+    }
+
+</tbody>
+
+
+
+
+</table>

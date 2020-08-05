@@ -1,0 +1,49 @@
+﻿@model MyProject.Models.Customer
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Fill the Form to Register</h2>
+
+
+@using (Html.BeginForm())
+{
+
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(false, "")
+   
+
+
+
+
+
+
+    <div class="form-group">
+
+        @Html.LabelFor(x => x.FirstName)
+        @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+
+        @Html.LabelFor(x => x.LastName)
+        @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+
+        @Html.LabelFor(x => x.Address)
+        @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
+
+        @Html.LabelFor(x => x.PhoneNumber)
+        @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <input type="submit" value="Register" />
+    </div>
+
+}
+
+
+
+
+<div>
+    @Html.ActionLink("Back to List with my Customers", "Index") @*index einai h arxikh selida*@
+</div>
+
