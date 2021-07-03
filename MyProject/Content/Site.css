@@ -1,36 +1,44 @@
 ﻿body {
-    padding-top: 14px;
-    padding-bottom: 200px;
+    padding-top: 40px;
+    padding-bottom: 100px;
 }
 
-/* Set padding to keep content from hitting the edges */
+ Set padding to keep content from hitting the edges 
 .body-content {
     padding-left: 20px;
     padding-right: 20px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
+ /*Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column*/ 
+
 .dl-horizontal dt {
     white-space: normal;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
+ /*Set width on the form input elements since they're 100% wide by default 
 input,
-select,
+select,*/
 textarea {
-    max-width: 280px;
+    max-width: 200px;
 }
 
 
-/*Bootstrap Ovverides*/
+
+
+
+
+Bootstrap Ovverides
 
 .body {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .bg-light {
     background-color:  !important;
 }
+
+
+
+

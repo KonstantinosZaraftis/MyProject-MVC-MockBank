@@ -15,24 +15,13 @@ namespace MyProject.Migrations
 
         protected override void Seed(MyProject.Models.ApplicationDbContext context)
         {
-       
-        Customer c1 = new Customer { FirstName = "Kostas", LastName = "Zaraftis", Address = "Ampabris", PhoneNumber = "694625346261" };
-        Customer c2 = new Customer { FirstName = "Dimitr", LastName = "Arg", Address = "Athens", PhoneNumber = "696554256361" };
-        context.Customers.AddOrUpdate(c => c.FirstName, c1, c2);
+            Customer c1 = new Customer() { FirstName = "Kostas", LastName = "Zaraftis", Address = "Ampabris", PhoneNumber = "6946337409", CardId = 1 };
+            context.Customers.AddOrUpdate(c => c.FirstName, c1);
 
-
-            BankAccount b1 = new BankAccount { AccountNumber = "57075040500" };
-            BankAccount b2 = new BankAccount { AccountNumber = "57075055500" };
-
-            context.BankAccounts.AddOrUpdate(b => b.AccountNumber, b1, b2);
-
-
-
-
-            Card ca1 = new Card { CardNumber = "4305796582255" };
-            Card ca2 = new Card { CardNumber = "4305796256255" };
-            context.Cards.AddOrUpdate(a => a.CardNumber, ca1, ca2);
-
+            Card a1 = new Card() { CardNumber = "430589875462", BankAccountId = 1 };
+            context.Cards.AddOrUpdate(a => a.CardNumber, a1);
+            BankAccount b1 = new BankAccount() { AccountNumber = "57070465841275" };
+            context.BankAccounts.AddOrUpdate(b => b.AccountNumber, b1);
         }
     }
 }

@@ -11,25 +11,27 @@ namespace MyProject.Migrations
                 "dbo.BankAccounts",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Int(nullable: false),
                         AccountNumber = c.String(nullable: false, maxLength: 50),
-                        CardId = c.Int(),
-                        Customer_Id = c.Int(),
+                        CustomerId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Cards", t => t.CardId)
-                .ForeignKey("dbo.Customers", t => t.Customer_Id)
-                .Index(t => t.CardId)
-                .Index(t => t.Customer_Id);
+                .ForeignKey("dbo.Cards", t => t.Id)
+                .ForeignKey("dbo.Customers", t => t.CustomerId, cascadeDelete: true)
+                .Index(t => t.Id)
+                .Index(t => t.CustomerId);
             
             CreateTable(
                 "dbo.Cards",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Int(nullable: false),
                         CardNumber = c.String(nullable: false, maxLength: 50),
+                        BankAccountId = c.Int(),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Customers", t => t.Id)
+                .Index(t => t.Id);
             
             CreateTable(
                 "dbo.Customers",
@@ -40,6 +42,7 @@ namespace MyProject.Migrations
                         LastName = c.String(nullable: false, maxLength: 50),
                         Address = c.String(nullable: false, maxLength: 50),
                         PhoneNumber = c.String(nullable: false, maxLength: 50),
+                        CardId = c.Int(),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -119,16 +122,18 @@ namespace MyProject.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.BankAccounts", "Customer_Id", "dbo.Customers");
-            DropForeignKey("dbo.BankAccounts", "CardId", "dbo.Cards");
+            DropForeignKey("dbo.BankAccounts", "CustomerId", "dbo.Customers");
+            DropForeignKey("dbo.BankAccounts", "Id", "dbo.Cards");
+            DropForeignKey("dbo.Cards", "Id", "dbo.Customers");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
-            DropIndex("dbo.BankAccounts", new[] { "Customer_Id" });
-            DropIndex("dbo.BankAccounts", new[] { "CardId" });
+            DropIndex("dbo.Cards", new[] { "Id" });
+            DropIndex("dbo.BankAccounts", new[] { "CustomerId" });
+            DropIndex("dbo.BankAccounts", new[] { "Id" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");

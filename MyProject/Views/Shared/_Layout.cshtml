@@ -9,33 +9,30 @@
 
 </head>
 <body>
-
-
+    
     <div class="container-fluid">
 
-     
 
+
+
+        <div>
             @Html.Partial("~/Views/Shared/Compnets/_NavigationBar.cshtml")
-            <div class>
-                @RenderBody()
-                <hr />
-                @Html.Partial("~/Views/Shared/Compnets/_Footer.cshtml")
+        </div>
+        @RenderBody()
+        <br />
+        <div>
 
-
-            <
+            <hr />
+            @Html.Partial("~/Views/Shared/Compnets/_Footer.cshtml")
 
         </div>
-
-
-
-
-
 
 
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+   
     @RenderSection("scripts", required: false)
 </body>
 </html>

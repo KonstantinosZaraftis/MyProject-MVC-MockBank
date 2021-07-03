@@ -1,4 +1,5 @@
 ﻿using MyProject.Models;
+using MyProject.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +16,16 @@ namespace MyProject.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            var customer = db.Customers.ToList();//fernei olous tou customers apo thn bash
+            var customer = db.Customers.SingleOrDefault();
+            var bankAccount = db.BankAccounts.ToList();
 
+            var customerAccountViewModel = new CustomerAccountViewModel{
+                Customer=customer,
+                BankAccounts=bankAccount
 
-            return View(customer);
+            };
+
+            return View(customerAccountViewModel);
         }
 
 

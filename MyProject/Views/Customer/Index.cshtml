@@ -1,4 +1,5 @@
-﻿@model IEnumerable<MyProject.Models.Customer>
+﻿@model  MyProject.ViewModel.CustomerAccountViewModel
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,39 +12,48 @@
 <table class="table">
     <thead>
         <tr>
-            <th>@Html.DisplayNameFor(model => model.Id)</th>
-            <th>@Html.DisplayNameFor(model => model.FirstName)</th>
-            <th>@Html.DisplayNameFor(model => model.LastName)</th>
-            <th>@Html.DisplayNameFor(model => model.Address)</th>
-            <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
+            <th>@Html.DisplayNameFor(model => model.Customer.Id)</th>
+                <th>@Html.DisplayNameFor(model => model.Customer.FirstName)</th>
+                <th>@Html.DisplayNameFor(model => model.Customer.LastName)</th>
+                <th>@Html.DisplayNameFor(model => model.Customer.Address)</th>
+                <th>@Html.DisplayNameFor(model => model.Customer.PhoneNumber)</th>
+            <th>@Html.DisplayNameFor(model => model.BankAccounts)</th>
             <th>Actions</th>
 
 
         </tr>
     </thead>
     <tbody>
-        @foreach (var bankacount in Model)
-        {
-            <tr>
-                <td>@Html.DisplayFor(model => bankacount.Id)</td>
-                <td>@Html.DisplayFor(model => bankacount.FirstName)</td>
-                <td>@Html.DisplayFor(model => bankacount.LastName)</td>
-                <td>@Html.DisplayFor(model => bankacount.Address)</td>
-                <td>@Html.DisplayFor(model => bankacount.PhoneNumber)</td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = bankacount.Id })
-                    @Html.ActionLink("Details", "Details", new { id = bankacount.Id })
-                    @Html.ActionLink("Delete", "Details", new { id = bankacount.Id })
-                </td>
+   
+
+        <tr>
+                <td>@Html.DisplayFor(model =>model.Customer.Id)</td>
+                <td>@Html.DisplayFor(model => model.Customer.FirstName)</td>
+                <td>@Html.DisplayFor(model =>model.Customer.LastName)</td>
+                <td>@Html.DisplayFor(model =>model.Customer.Address)</td>
+                <td>@Html.DisplayFor(model => model.Customer.PhoneNumber)</td>
+                 @foreach (var account in Model.BankAccounts)
+
+                 {
+
+                  <td>@Html.DisplayFor(model => account.AccountNumber)</td>
+
+                 }
+
+                @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { id = customer.Id })
+                    @Html.ActionLink("Details", "Details", new { id = customer.Id })
+                    @Html.ActionLink("Delete", "Details", new { id = customer.Id })
+                </td>*@
             </tr>
-        }
 
-    </tbody>
-
-
+         
+     </tbody>
 
 
-</table>
+
+
+    </table>
 
 
 
