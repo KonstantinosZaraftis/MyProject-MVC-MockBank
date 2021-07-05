@@ -1,0 +1,27 @@
+﻿@model MyProject.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details For Customer</h2>
+
+<div class="form-group">
+<br />
+Onoma Customers:@Model.FirstName
+<br />
+Epitheto Customers:@Model.LastName
+<br />
+Diethunsh Katoikias:@Model.Address
+<br />
+Aritmos Thlefvnoy:@Model.PhoneNumber
+</div>
+<div>
+
+  @Html.ActionLink("Back to Customers","Index")
+</div>
+<br />
+
+<div>
+    @Html.ActionLink("Edit Customer", "Edit", new {id=Model.Id})
+</div>

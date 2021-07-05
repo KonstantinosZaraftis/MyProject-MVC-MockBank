@@ -1,0 +1,24 @@
+﻿@model MyProject.Models.Customer
+@{
+    ViewBag.Title = "Delete Customer";
+}
+
+<h2>Delete Customer</h2>
+
+<br />
+Onoma Customers:@Model.FirstName
+<br />
+Epitheto Customers:@Model.LastName
+<br />
+Diethunsh Katoikias:@Model.Address
+<br />
+Aritmos Thlefvnoy:@Model.PhoneNumber
+
+<br />
+
+@using (Html.BeginForm())
+{
+    <div>
+        <input type="submit" value="Delete" class="btn-danger" />
+    </div>
+}

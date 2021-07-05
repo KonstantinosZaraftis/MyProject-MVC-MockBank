@@ -1,0 +1,51 @@
+﻿@model MyProject.Models.Customer
+@{
+    ViewBag.Title = "Edit Customer";
+}
+
+<h2>Edit Customer</h2>
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+
+            @Html.LabelFor(x => x.FirstName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+            </div>
+            @Html.LabelFor(x => x.LastName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+            </div>
+            @Html.LabelFor(x => x.Address, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(x => x.Address, new {@class="form-control"})
+            </div>
+            @Html.LabelFor(x => x.PhoneNumber, new {@class= "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(x=>x.PhoneNumber,new { @class = "form-control" })
+            </div>
+            <br />
+
+
+            <div class="form-group">
+              <div class="col-md-offset-2 col-lg-1 md-10">
+                  <input type="submit" name="submit" value="Save Changes" />
+              </div>
+
+            </div>
+
+        </div>
+         <br />
+        <div>
+            @Html.ActionLink("Back to Customers","Index")
+        </div>
+
+
+
+
+
+
+    </div>
+
+ }
