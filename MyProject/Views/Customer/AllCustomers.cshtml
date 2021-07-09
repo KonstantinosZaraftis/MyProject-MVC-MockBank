@@ -1,0 +1,54 @@
+﻿@model IEnumerable<MyProject.Models.Customer>
+@{
+    ViewBag.Title = "AllCustomers";
+}
+
+<h2>All My Customers</h2>
+
+<br />
+@Html.ActionLink("Create New", "Create")
+<br />
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(x => x.FirstName)</th>
+
+            <th>@Html.DisplayNameFor(x => x.LastName)</th>
+
+            <th>@Html.DisplayNameFor(x => x.Address)</th>
+
+            <th>@Html.DisplayNameFor(x => x.PhoneNumber)</th>
+
+            <th>@Html.DisplayNameFor(x=>x.BankAccounts)</th>
+            
+
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var customer in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(x => customer.FirstName)</td>
+            <td>@Html.DisplayFor(x => customer.LastName)</td>
+            <td>@Html.DisplayFor(x => customer.Address)</td>
+            <td>@Html.DisplayFor(x => customer.PhoneNumber)</td>
+            <td>@Html.DisplayFor(x=>customer.BankAccounts)</td>
+           
+
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = customer.Id }, new { @class = "btn-primary" })
+                @Html.ActionLink("Details", "Details", new { id = customer.Id }, new { @class = "btn-success" })
+                @Html.ActionLink("Delete", "Delete", new { id = customer.Id }, new { @class = "btn-danger" })
+            </td>
+        </tr>
+
+        }
+
+    </tbody>
+
+</table>

@@ -1,0 +1,27 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+
+#registerForm {
+    align-items:center;
+    background-color: #f7f7f7;
+    max-width: 40%;
+    text-align:left;
+    color: #06a7e2;
+    margin-top: 2%;
+    margin-left: 30%;
+}
+h2 {
+    text-align: center;
+    color: #06a7e2;
+}
+.btn {
+    background-color: #06a7e2;
+    color: white;
+    text-decoration: none;
+    padding:20px 32px;
+    border: none;
+    font-size:70%;
+}

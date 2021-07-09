@@ -17,8 +17,8 @@
                 <th>@Html.DisplayNameFor(model => model.Customer.LastName)</th>
                 <th>@Html.DisplayNameFor(model => model.Customer.Address)</th>
                 <th>@Html.DisplayNameFor(model => model.Customer.PhoneNumber)</th>
-            <th>@Html.DisplayNameFor(model => model.BankAccounts)</th>
-            <th>Actions</th>
+                <th>@Html.DisplayNameFor(model => model.BankAccounts)</th>
+                <th>Actions</th>
 
 
         </tr>
@@ -27,24 +27,30 @@
    
 
         <tr>
-                <td>@Html.DisplayFor(model =>model.Customer.Id)</td>
+                
+                 
+
+
+                <td>@Html.DisplayFor(model => model.Customer.Id)</td>
                 <td>@Html.DisplayFor(model => model.Customer.FirstName)</td>
-                <td>@Html.DisplayFor(model =>model.Customer.LastName)</td>
-                <td>@Html.DisplayFor(model =>model.Customer.Address)</td>
+                <td>@Html.DisplayFor(model => model.Customer.LastName)</td>
+                <td>@Html.DisplayFor(model => model.Customer.Address)</td>
                 <td>@Html.DisplayFor(model => model.Customer.PhoneNumber)</td>
+                
                  @foreach (var account in Model.BankAccounts)
 
-                 {
+                  {
 
                   <td>@Html.DisplayFor(model => account.AccountNumber)</td>
 
-                 }
+                   }
 
                 @*<td>
-                    @Html.ActionLink("Edit", "Edit", new { id = customer.Id })
-                    @Html.ActionLink("Details", "Details", new { id = customer.Id })
-                    @Html.ActionLink("Delete", "Details", new { id = customer.Id })
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.Customer.Id })
+                    @Html.ActionLink("Details", "Details", new { id = Model.Customer.Id })
+                    @Html.ActionLink("Delete", "Delete", new { id = Model.Customer.Id })
                 </td>*@
+               
             </tr>
 
          

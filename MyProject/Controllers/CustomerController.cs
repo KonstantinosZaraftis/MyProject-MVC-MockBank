@@ -13,21 +13,26 @@ namespace MyProject.Controllers
     public class CustomerController : Controller
     {
         ApplicationDbContext db = new ApplicationDbContext();
+         public ActionResult AllCustomers()
+         {
+            var customers = db.Customers.ToList();
+            return View(customers);
+         }
+        //GET: Customer
+        //public ActionResult Index()
+        //{
+        //    ////var customer = db.Customers.Find(id);
+        //    //var bankAccount = db.BankAccounts.ToList();
 
-        // GET: Customer
-        public ActionResult Index()
-        {
-            var customer = db.Customers.SingleOrDefault();
-            var bankAccount = db.BankAccounts.ToList();
+        //    //var customerAccountViewModel = new CustomerAccountViewModel
+        //    //{
+        //    //    //Customer = customer,
+        //    //    BankAccounts = bankAccount
 
-            var customerAccountViewModel = new CustomerAccountViewModel{
-                Customer=customer,
-                BankAccounts=bankAccount
+        //    //};
 
-            };
-
-            return View(customerAccountViewModel);
-        }
+        //    return View(customerAccountViewModel);
+        //}
 
 
         public ActionResult Create()//GET
@@ -104,7 +109,7 @@ namespace MyProject.Controllers
         }
         [HttpPost]
         [ActionName("Delete")]
-        public ActionResult DeleteFoo([Bind(Include = "Id,FirstName, LastName, Address, PhoneNumber")]int id)
+        public ActionResult DeleteFoo(int id)
         {
             Customer customer = db.Customers.Find(id);
             if (customer == null)

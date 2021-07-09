@@ -31,7 +31,7 @@ namespace MyProject.Models
          public int? CardId { get; set; }
          public Card Card { get; set; }// exei mia karta
         
-        public IEnumerable<BankAccount> BankAccounts { get; set; }// exei pollous logariasmous
+         public IEnumerable<BankAccount> BankAccounts { get; set; }// exei pollous logariasmous
        
 
 

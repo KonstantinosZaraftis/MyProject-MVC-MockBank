@@ -1,0 +1,44 @@
+﻿body {
+
+    margin:0;
+    padding:0;
+}
+
+#loginForm {
+    align-items:center;
+    background-color:#f7f7f7;
+    max-width: 130%;
+    text-align:left;
+    color: #06a7e2;
+    margin-top: 2%;
+    margin-left:70%;
+}
+h1 {
+    text-align:center;
+    color: #06a7e2;
+}
+h2 {
+    text-align: center;
+    color: #06a7e2;
+}
+
+.imgcontainer {
+    text-align:center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 13%;
+    border-radius: 40%;
+}
+
+
+.btn {
+    background-color: #06a7e2;
+    color: white;
+    text-decoration: none;
+    padding: 20 px 32 px;
+    border: none;
+    font - size: 100 %;
+}

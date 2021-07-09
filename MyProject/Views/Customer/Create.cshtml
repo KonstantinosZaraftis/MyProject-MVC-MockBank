@@ -9,14 +9,9 @@
 
 @using (Html.BeginForm())
 {
-
+    @*@Html.HiddenFor(c => c.Id)*@
     @Html.AntiForgeryToken()
-    @Html.ValidationSummary(false, "")
-   
-
-
-
-
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
 
 
     <div class="form-group">
@@ -35,7 +30,7 @@
     </div>
 
     <div>
-        <input type="submit" value="Register" />
+        <input type="submit" value="Create" />
     </div>
 
 }
