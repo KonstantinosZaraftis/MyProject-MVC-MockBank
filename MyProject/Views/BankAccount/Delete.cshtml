@@ -1,0 +1,18 @@
+﻿@model MyProject.Models.BankAccount
+@{
+    ViewBag.Title = "Delete BankAccount";
+}
+
+<h2>Delete BankAccount</h2>
+
+<br />
+BankAccount:@Model.AccountNumber
+
+<br />
+@using (Html.BeginForm())
+{
+    <div>
+        <input type="submit" value="Delete" class="btn-danger" />
+    </div>
+ }
+

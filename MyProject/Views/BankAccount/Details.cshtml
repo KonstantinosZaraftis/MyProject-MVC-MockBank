@@ -1,0 +1,22 @@
+﻿@model MyProject.Models.BankAccount
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details For My BankAccount</h2>
+
+<div class="form-group">
+    <br />
+    Onoma Customers:@Model.AccountNumber
+    
+   
+<div>
+
+    @Html.ActionLink("Back to my List", "Index")
+</div>
+<br />
+
+<div>
+    @Html.ActionLink("Edit BankAccount", "Edit", new { id = Model.Id })
+</div>

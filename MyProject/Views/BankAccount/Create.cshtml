@@ -1,10 +1,10 @@
-﻿@model MyProject.Models.Card
+﻿@model MyProject.Models.BankAccount
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2> Create  Customer Card</h2>
+<h2> Create BankAccount</h2>
 
 
 @using (Html.BeginForm())
@@ -16,10 +16,10 @@
 
     <div class="form-group">
 
-        @Html.LabelFor(x => x.CardNumber)
-        @Html.TextBoxFor(x => x.CardNumber, new { @class = "form-control" })
+        @Html.LabelFor(x => x.AccountNumber)
+        @Html.TextBoxFor(x => x.AccountNumber, new { @class = "form-control" })
 
-       
+      
     </div>
 
     <div>
@@ -32,6 +32,7 @@
 
 
 <div>
-    @Html.ActionLink("Back to List with my Cards", "Index") @*index einai h arxikh selida*@
+    @Html.ActionLink("Back to List of BankAccounts", "Index") @*index einai h arxikh selida*@
 </div>
+
 

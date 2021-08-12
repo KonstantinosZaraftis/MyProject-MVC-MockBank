@@ -1,20 +1,20 @@
-﻿@model MyProject.Models.Card
+﻿@model MyProject.Models.BankAccount
 @{
-    ViewBag.Title = "Edit Card";
+    ViewBag.Title = "Edit BankAccount";
 }
 
-<h2>Edit Card</h2>
+<h2>Edit BankAccount</h2>
 @using (Html.BeginForm())
 {
     <div class="form-horizontal">
         <div class="form-group">
 
-            @Html.LabelFor(x => x.CardNumber, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(x => x.AccountNumber, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(x => x.CardNumber, new { @class = "form-control" })
+                @Html.TextBoxFor(x => x.AccountNumber, new { @class = "form-control" })
             </div>
-            
-            
+           
+        </div>
             <br />
 
 
@@ -28,7 +28,7 @@
         </div>
         <br />
         <div>
-            @Html.ActionLink("Back to List of Cards", "Index")
+            @Html.ActionLink("Back to AccountNumbers", "Index")
         </div>
 
 
@@ -36,7 +36,4 @@
 
 
 
-    </div>
-
 }
-
