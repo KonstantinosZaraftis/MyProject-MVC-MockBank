@@ -1,0 +1,22 @@
+﻿@model MyProject.Models.Card
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details For Customers Card</h2>
+
+<div class="form-group">
+    <br />
+    Onoma Customers:@Model.CardNumber
+    
+</div>
+<div>
+
+    @Html.ActionLink("Back to Customers", "Index")
+</div>
+<br />
+
+<div>
+    @Html.ActionLink("Edit Customer", "Edit", new { id = Model.Id })
+</div>

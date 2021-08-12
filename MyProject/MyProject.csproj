@@ -183,6 +183,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\BankAccountsController.cs" />
     <Compile Include="Controllers\BankAccountController.cs" />
     <Compile Include="Controllers\CardController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
@@ -405,12 +406,15 @@
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Customer\Delete.cshtml" />
     <Content Include="Views\Customer\AllCustomers.cshtml" />
+    <Content Include="Views\Card\Create.cshtml" />
+    <Content Include="Views\Card\Edit.cshtml" />
+    <Content Include="Views\Card\Details.cshtml" />
+    <Content Include="Views\Card\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Icons\" />
     <Folder Include="Models\CustomValidation\" />
-    <Folder Include="Views\Card\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,0 +1,37 @@
+﻿@model MyProject.Models.Card
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Create  Customer Card</h2>
+
+
+@using (Html.BeginForm())
+{
+    @*@Html.HiddenFor(c => c.Id)*@
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+
+    <div class="form-group">
+
+        @Html.LabelFor(x => x.CardNumber)
+        @Html.TextBoxFor(x => x.CardNumber, new { @class = "form-control" })
+
+       
+    </div>
+
+    <div>
+        <input type="submit" value="Create" />
+    </div>
+
+}
+
+
+
+
+<div>
+    @Html.ActionLink("Back to List with my Customers", "Index") @*index einai h arxikh selida*@
+</div>
+

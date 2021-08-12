@@ -1,0 +1,18 @@
+﻿@model MyProject.Models.Card
+@{
+    ViewBag.Title = "Delete Card";
+}
+
+<h2>Delete Card</h2>
+
+<br />
+Onoma Customers:@Model.CardNumber
+<br />
+
+<br />
+@using (Html.BeginForm())
+{
+    <div>
+        <input type="submit" value="Delete" class="btn-danger" />
+    </div>
+}
